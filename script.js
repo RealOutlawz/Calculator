@@ -77,3 +77,12 @@ equalsButton.addEventListener("click", () => {
     equalClicked = true;
   }
 });
+
+//When clear button is clicked all values are reset to empty or false;
+clearButton.addEventListener("click", () => {
+  num1 = "";
+  num2 = "";
+  operator = "";
+  display.textContent = "";
+  equalClicked = false;
+});
