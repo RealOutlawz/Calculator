@@ -1,31 +1,38 @@
 let num1 = 0;
-let operator = " ";
 let num2 = 0;
+let operator = " ";
+let equalsClicked = false;
 
 const display = document.getElementById("dispalyOutput");
 const numberButtons = document.querySelectorAll(".digit");
+const operatorButtons = document.querySelectorAll(".operator");
+const equalsButton = document.querySelector(".equals");
+const clearButton = document.querySelector(".clear");
 
-//function operate(num1, num2, operator) {}
-
-function buttonClicked(event) {
-  const buttonNumber = event.target.textContent;
-
-  if (display.textContent === "0") {
-    display.textContent = buttonNumber + " ";
-  } else {
-    display.textContent += buttonNumber + " ";
-  }
-}
-
-numberButtons.forEach((button) => {
-  button.addEventListener("click", buttonClicked);
-});
+function operate(num1, num2, operator) {}
 
 /*
-make a function thats called when a button is clicked
-when that function is called make a varialbe that represents the number of the button
-create a if statement that looks to see if the display is showing 0, 
-if it is then just update the display with the new number
-if not just put the new number out
-add spacing so numbers arent close together 
+After the number is displayed into the display store that number into num1
+Do the same for the operator and store it into its variable
+Same for num2
+After the equal signs is clicked run the operate command to do the calculation
+Possible use a switch case?
 */
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const buttonNumValue = event.target.textContent;
+
+    if (display.textContent === "0") {
+      display.textContent = buttonNumValue;
+    } else {
+      display.textContent += buttonNumber + " ";
+    }
+
+    if (operator) {
+      num2 += buttonNumber;
+    } else {
+      num1 += buttonNumber;
+    }
+  });
+});
