@@ -55,9 +55,16 @@ numberButtons.forEach((button) => {
     }
 
     if (operator) {
-      num2 += buttonNumValue; // if the operator being clicked is true then store the nubmer in num2
+      num2 += buttonNumValue; // if the operator has a value in it eg: * or / then it returns true and stores in num2
     } else {
-      num1 += buttonNumValue; // if the operator being clicked is false then store in num1
+      num1 += buttonNumValue; // if the operator doesnt have a value then it then its stored in num1
     }
+  });
+});
+
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    operator = event.target.textContent;
+    display.textContent = "";
   });
 });
