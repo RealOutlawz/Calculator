@@ -42,7 +42,7 @@ numberButtons.forEach((button) => {
       equalClicked = false;
     } else {
       display.textContent === "0" //Check to see if the display is showing 0
-        ? (display.textContent = buttonNumValue) // if yes then makes the display output equal the number pressed
+        ? (display.textContent = buttonNumValue + " ") // if yes then makes the display output equal the number pressed
         : (display.textContent += buttonNumValue); // if no then adds that number onto the numbers already present
     }
 
@@ -58,6 +58,7 @@ numberButtons.forEach((button) => {
 operatorButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     operator = event.target.textContent;
+    display.textContent += event.target.textContent + " ";
   });
 });
 
