@@ -40,9 +40,12 @@ numberButtons.forEach((button) => {
     if (equalClicked) {
       display.textContent = buttonNumValue;
       equalClicked = false;
+      num1 = buttonNumValue;
+      num2 = "";
+      operator = "";
     } else {
       display.textContent === "0" //Check to see if the display is showing 0
-        ? (display.textContent = buttonNumValue + " ") // if yes then makes the display output equal the number pressed
+        ? (display.textContent = buttonNumValue) // if yes then makes the display output equal the number pressed
         : (display.textContent += buttonNumValue); // if no then adds that number onto the numbers already present
     }
 
@@ -54,11 +57,25 @@ numberButtons.forEach((button) => {
   });
 });
 
-// when a operator button is clicked the text content of that button "* or / or +" is stored in the operator variable
+/* 
+when a operator button is clicked the text content of that button "* or / or +" is stored in the operator variable
+if we already have a operator variable and num2 assigned to a value then we run the operate function and set that to num1 and displays num1
+to continue a new equation using the last value  and then set num2 to be empty 
+also if the equal sign is already clicked then we set num2 to be empty and equalClicked to false
+*/
 operatorButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
+    if (operator && num2) {
+      num1 = operate(+num1, +num2, operator);
+      display.textContent = num1;
+      num2 = "";
+    }
+    if (equalClicked) {
+      equalClicked = false;
+      num2 = "";
+    }
     operator = event.target.textContent;
-    display.textContent += event.target.textContent + " ";
+    display.textContent += ` ${operator} `;
   });
 });
 
@@ -84,6 +101,6 @@ clearButton.addEventListener("click", () => {
   num1 = "";
   num2 = "";
   operator = "";
-  display.textContent = "";
+  display.textContent = "0";
   equalClicked = false;
 });
