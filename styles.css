@@ -43,3 +43,18 @@ body {
   background-color: darkred;
   color: white;
 }
+
+.operator {
+  background-color: orange;
+  color: white;
+}
+
+.digit {
+  background-color: darkblue;
+  color: white;
+}
+
+.equals {
+  background-color: lightgreen;
+  color: white;
+}
