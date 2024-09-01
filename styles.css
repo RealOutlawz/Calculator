@@ -28,3 +28,18 @@ body {
   flex-wrap: wrap;
   padding: 10px;
 }
+
+/* add transitions later */
+.button {
+  padding: 20px;
+  font-size: 20px;
+  margin: 6px;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+}
+
+.clear {
+  background-color: darkred;
+  color: white;
+}
